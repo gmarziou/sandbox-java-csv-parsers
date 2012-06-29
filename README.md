@@ -11,3 +11,9 @@ Evaluation of several open source CSV file parsers written in java:
 See JUnit tests in src/test/java/com/kairolia/parsers/csv/flatpack
 
 Finally, we picked up opencsv.
+
+Few experiments with [Apache Tika](http://tika.apache.org/) for content parsing and extraction of many file formats except CSV.
+
+* Tika uses [Apache POI](http://poi.apache.org/) for parsing Office documents.
+* The parsing extracts file meta data and data/structure using SAX events.
+* See TikaParsersTest

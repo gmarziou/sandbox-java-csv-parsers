@@ -1,6 +1,7 @@
-package com.kairolia.parsers;
+package com.kairolia.parsers.csv.supercsv;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Rubber {
     private String brand;
@@ -8,6 +9,7 @@ public class Rubber {
     private String color;
     private BigDecimal thickness;
     private BigDecimal price;
+    private Date date;
 
 
     public String getBrand() {
@@ -48,6 +50,15 @@ public class Rubber {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override

@@ -3,11 +3,12 @@
  */
 package com.kairolia.parsers.csv.supercsv;
 
-import com.kairolia.parsers.Rubber;
 import com.kairolia.parsers.csv.CsvParserBaseTest;
 import org.apache.tika.exception.TikaException;
 import org.junit.Test;
+import org.supercsv.cellprocessor.Optional;
 import org.supercsv.cellprocessor.ParseBigDecimal;
+import org.supercsv.cellprocessor.ParseDate;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
@@ -37,11 +38,12 @@ public class SuperCsvParserTest extends CsvParserBaseTest {
 		assertHeader(header);
 
 		final CellProcessor[] processors = new CellProcessor[] {
-				new NotNull(), // Brand;;;;
+				new NotNull(), // Brand
 				new NotNull(), // Model
 				new NotNull(), // Color
 				new ParseBigDecimal(FRENCH_DECIMAL_SYMBOL), // Thickness
-				new ParseBigDecimal(FRENCH_DECIMAL_SYMBOL)  // Price
+				new ParseBigDecimal(FRENCH_DECIMAL_SYMBOL), // Price
+				new Optional(new ParseDate("yyyy-MM-dd"))  // Date
 		};
 		try {
 			Rubber rubber;

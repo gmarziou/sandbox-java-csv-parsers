@@ -23,6 +23,7 @@ import org.springframework.core.io.ClassPathResource;
  */
 public class CsvParserBaseTest {
 
+	protected static final String HEADER_5 = "Date";
 	protected static final String HEADER_4 = "Price";
 	protected static final String HEADER_3 = "Thickness";
 	protected static final String HEADER_2 = "Color";
@@ -38,12 +39,13 @@ public class CsvParserBaseTest {
 	}
 
 	protected void assertHeader(final String[] header) {
-		assertEquals(5, header.length);
+		assertEquals(6, header.length);
 		assertEquals(HEADER_0, header[0]);
 		assertEquals(HEADER_1, header[1]);
 		assertEquals(HEADER_2, header[2]);
 		assertEquals(HEADER_3, header[3]);
 		assertEquals(HEADER_4, header[4]);
+		assertEquals(HEADER_5, header[5]);
 	}
 
 	@Before

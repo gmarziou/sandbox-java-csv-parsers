@@ -3,15 +3,11 @@ java-csv-parsers
 
 Evaluation of several open source CSV file parsers written in java:
 
-* [flatpack](http://flatpack.sourceforge.net/)
-* [opencsv](http://sourceforge.net/projects/opencsv/)
-* [supercsv](https://github.com/super-csv/super-csv)
-
 See JUnit tests in [src/test/java/com/kairolia/parsers/csv]
 
-Initially, I made this evaluation in 2012 and we picked up opencsv.
+Initially in 2012, we evaluated [javacsv], [flatpack], [opencsv] and [supercsv] and chose opencsv.
 
-In 2017, I updated this project to catch up with latest versions.
+In 2017, I updated this project to catch up with latest versions and removed javacsv and flatpack.
 
 Few experiments with [Apache Tika](http://tika.apache.org/) for content parsing and extraction of many file formats.
 In version 0.7 (in 2012), it did not support CSV, now it does but I haven't tested it.
@@ -19,3 +15,9 @@ In version 0.7 (in 2012), it did not support CSV, now it does but I haven't test
 * Tika uses [Apache POI](http://poi.apache.org/) for parsing Office documents.
 * The parsing extracts file meta data and data/structure using SAX events.
 * See [com.kairolia.parsers.tika.ParserTest](src/test/java/com/kairolia/parsers/tika/ParserTest.java)
+
+
+* [javacsv](http://sourceforge.net/projects/javacsv/)
+* [flatpack](http://flatpack.sourceforge.net/)
+* [opencsv](http://sourceforge.net/projects/opencsv/)
+* [supercsv](https://github.com/super-csv/super-csv)

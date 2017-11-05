@@ -11,11 +11,13 @@ import org.supercsv.cellprocessor.ParseDate;
 import org.supercsv.cellprocessor.ParseEnum;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
+import org.supercsv.cellprocessor.time.ParseLocalDate;
 import org.supercsv.io.CsvBeanReader;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.text.DecimalFormatSymbols;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import static java.text.DecimalFormatSymbols.getInstance;
@@ -42,7 +44,7 @@ public class SuperCsvParserTest extends CsvParserBaseTest {
                 new NotNull(new ParseEnum(Rubber.Color.class, true)), // Color
                 new ParseBigDecimal(FRENCH_DECIMAL_SYMBOL), // Thickness
                 new ParseBigDecimal(FRENCH_DECIMAL_SYMBOL), // Price
-                new Optional(new ParseDate("yyyy-MM-dd"))  // Date
+                new Optional(new ParseLocalDate(DateTimeFormatter.ISO_DATE))  // Date
         };
         try {
             Rubber rubber;

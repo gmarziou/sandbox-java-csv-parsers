@@ -1,7 +1,7 @@
 package com.kairolia.parsers.csv.supercsv;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Rubber {
     enum Color {RED, BLACK}
@@ -11,8 +11,7 @@ public class Rubber {
     private Color color;
     private BigDecimal thickness;
     private BigDecimal price;
-    private Date date;
-
+    private LocalDate date;
 
     public String getBrand() {
         return brand;
@@ -54,12 +53,11 @@ public class Rubber {
         this.price = price;
     }
 
-
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -71,6 +69,7 @@ public class Rubber {
                 ", color='" + color + '\'' +
                 ", thickness=" + thickness +
                 ", price=" + price +
+                ", date=" + date +
                 '}';
     }
 }
